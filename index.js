@@ -1,14 +1,26 @@
 
-let mySaves = ['hello', 'hi', 'ciao', 'july'];
+let mySaves = []
 const inputEl = document.getElementById('input-el')
 const inputBtn = document.getElementById('input-btn')
+const ulEl = document.getElementById('ul-el');
 
 
 inputBtn.addEventListener('click', function() {
     mySaves.push(inputEl.value);
-    console.log(mySaves)
+
+    renderSaves()
+    clearInput()
 })
 
+function renderSaves() {
+    let listItems = ""
 for (let i = 0; i < mySaves.length; i++) {
-    console.log(mySaves[i])
+    listItems += "<li>" + mySaves[i] + "</li>"
 }
+ulEl.innerHTML = listItems
+}
+
+function clearInput() {
+    inputEl.value = "";
+}
+
