@@ -4,12 +4,22 @@ const inputEl = document.getElementById('input-el')
 const inputBtn = document.getElementById('input-btn')
 const ulEl = document.getElementById('ul-el');
 
+let savesFromLocalStorage = JSON.parse(localStorage.getItem("mySaves"));
+console.log(savesFromLocalStorage);
+
+if (savesFromLocalStorage) {
+    mySaves = savesFromLocalStorage;
+    renderSaves();
+}
 
 inputBtn.addEventListener('click', function() {
     mySaves.push(inputEl.value);
 
+    localStorage.setItem("mySaves", JSON.stringify(mySaves));
     renderSaves()
     clearInput()
+
+    console.log(localStorage.getItem('mySaves'));
 })
 
 function renderSaves() {
@@ -27,4 +37,5 @@ ulEl.innerHTML = listItems
 function clearInput() {
     inputEl.value = "";
 }
+
 
