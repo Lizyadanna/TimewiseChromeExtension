@@ -3,9 +3,9 @@ let mySaves = []
 const inputEl = document.getElementById('input-el')
 const inputBtn = document.getElementById('input-btn')
 const ulEl = document.getElementById('ul-el');
+const deleteBtn = document.getElementById('delete-btn')
 
-let savesFromLocalStorage = JSON.parse(localStorage.getItem("mySaves"));
-console.log(savesFromLocalStorage);
+const savesFromLocalStorage = JSON.parse(localStorage.getItem("mySaves"));
 
 if (savesFromLocalStorage) {
     mySaves = savesFromLocalStorage;
@@ -21,6 +21,14 @@ inputBtn.addEventListener('click', function() {
 
     console.log(localStorage.getItem('mySaves'));
 })
+
+deleteBtn.addEventListener("dblclick", function() {
+    console.log("double clicked!")
+    localStorage.clear()
+    mySaves = []
+    renderSaves()
+})
+
 
 function renderSaves() {
     let listItems = ""

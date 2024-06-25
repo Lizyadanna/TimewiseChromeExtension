@@ -8,7 +8,7 @@ body {
 input {
     margin-bottom: 5px;
     border: 3px solid #ffafcc;
-    border-radius: 7px;
+    border-radius: 5px;
     height: 40px;
     background-color: #a2d2ff;
     padding: 10px;
@@ -19,8 +19,8 @@ input {
 button {
     width: 30%;
     padding: 10px 20px;
-    border: 3px solid #ffafcc;
-    border-radius: 7px;
+    border: 2px solid #ffafcc;
+    border-radius: 5px;
     font-size: normal;
     font-weight: bold;
     color: black;
