@@ -47,7 +47,7 @@ tabBtn.addEventListener('click', function() {
     renderSaves()
 } )
 
-deleteBtn.addEventListener("dblclick", function() {
+deleteBtn.addEventListener('click', function() {
     localStorage.clear()
     mySaves = []
     renderSaves()
