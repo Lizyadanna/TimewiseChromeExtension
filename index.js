@@ -15,10 +15,14 @@ inputBtn.addEventListener('click', function() {
 function renderSaves() {
     let listItems = ""
 for (let i = 0; i < mySaves.length; i++) {
-    listItems += "<li>" + mySaves[i] + "</li>"
+    listItems += `
+    <li>
+    <a target='_blank' href='about:blank'> ${mySaves[i]}</a>
+    </li>
+    `
 }
 ulEl.innerHTML = listItems
-}
+} 
 
 function clearInput() {
     inputEl.value = "";
